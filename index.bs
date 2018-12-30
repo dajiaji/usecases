@@ -145,6 +145,24 @@ is used for the communication, e.g. file transfer.
 
 <figure id="fig-uc09"><img src="figs/uc09.jpg"></figure>
 
+## UC-10: Configuring a home router via its web interface ## {#uc-10}
+
+To check Wi-Fi settings of a home router, a user accesses the web interface of
+the router by typing the URL (e.g., https://home-router.local, https://192.168.1.1)
+on a web browser's address bar. In general, since such kind of home routers 
+do not have valid web PKI certificates, the web browser shows the user a warning
+that says the connection is not secure, etc. However, in this case, the web
+browser shows a dialog promoting the user to approve the access to the router.
+Once the user approves the access, then the web browser treats the router as a
+trusted one and does not show the warning above. In addtion, the router supports
+SSO functionality so the user can use an ID provider's account (Google acount, etc.)
+to sign in the router's web interface.
+
+Analysis of the use cases {#analysisoftheusecases}
+==================================================
+
+T.B.D.
+
 Requirements {#requirements}
 ============================
 
