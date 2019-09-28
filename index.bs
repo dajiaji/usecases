@@ -139,10 +139,7 @@ a valid web PKI certificate, the web browser displays a warning like
 “The connection is not secure” but provides an option to ask the user to
 approve the access or add the URL as an exception to the whitelist.
 Once user takes the action, the web browser treats the device as a trusted one
-and does not display the warning in subsequent attempts. Additionally, if the
-home device supports functionality such as, SSO (Single Sign-On) the user can
-use an identity (ID) provider's account (e.g., Google, Facebook, and so on)
-to sign in the device’s web interface and provide the needed trust.
+and does not display the warning in subsequent attempts.
 
 Similar secure access is required when a home gateway, which is typically
 controlling other home devices (e.g., door locks, security cameras),
@@ -179,6 +176,25 @@ prevent the MITM attack in the local network and also the regular WebSocket API
 is used for the communication, e.g. file transfer.
 
 <figure id="fig-uc08"><img src="figs/uc08.jpg"></figure>
+
+## UC-9: Single Sign-On to a Home Router ## {#uc-9}
+
+A home router has a web interface for users to set up it. The web interface provide
+a basic user authentication but ordinary users tend to use it without changing 
+a factory default password (e.g., root/pass), making it infection.
+
+If the web interface were served via a trusted HTTPS server, it can collaborate
+with ID providers (e.g., Google, Facebook, and so on) on the internet securely
+and the user can log into it with the ID providers' account and provide the needed
+trust. In this case, factory default passwords might not need to be used and the
+home routers can be protected not to be used as bots for network attacks such as
+[[MIRAI]].
+
+Additionally, if the
+home device supports functionality such as, SSO (Single Sign-On) the user can
+use an identity (ID) provider's account (e.g., Google, Facebook, and so on)
+to sign in the device’s web interface and provide the needed trust.
+<figure id="fig-uc09"><img src="figs/uc09.jpg"></figure>
 
 Requirements {#requirements}
 ============================
@@ -352,5 +368,9 @@ a hindrance to providing a better user experience. Following requirements should
 
 <pre class="biblio">
 {
+  "MIRAI": {
+    "href": "https://www.cyber.nj.gov/threat-profiles/botnet-variants/mirai-botnet",
+    "title": "Mirai"
+  },
 }
 </pre>
